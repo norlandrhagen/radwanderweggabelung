@@ -1,6 +1,9 @@
 from flask import Flask, jsonify, request, Response
+from flask_restful import Api
 
 app = Flask(__name__)
+api = Api(app)
+ 
 
 '''
 GET:    Trail
