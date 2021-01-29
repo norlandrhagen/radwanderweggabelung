@@ -4,6 +4,9 @@ import pandas as pd
 import gpxpy
 import gpxpy.gpx
 
+
+from trailsporks.insert import connection as cnxn
+
 trail_name = 'notg'
 
 def gpx_to_pandas(gpx_file_path):
@@ -31,11 +34,8 @@ def gpx_to_pandas(gpx_file_path):
     return gpx_df
 
 def build_trail_meta(trail_name):
-    df = pd.DataFrame({'trail_ID':[''],'trail_name':["""{}""".format(trail_name)]})
+    df = pd.DataFrame({'trail_name':["""{}""".format(trail_name)]})
     return df
-
-
-"""pd.read_csv("../data_folder/data.csv")"""
 
 def grab_trail_traj(trail_name):
     trail_traj_path  = """../gpx/{trail_name}.gpx""".format(trail_name=trail_name)
@@ -44,8 +44,7 @@ def grab_trail_traj(trail_name):
 
 dftm = build_trail_meta(trail_name)
 dftraj = grab_trail_traj(trail_name)
+dftraj.insert(0,'trail_id',1)
 
-
-gpx_file_path = '../gpx/notg.gpx'
-gpx_file = open(gpx_file_path,'r')
-gpx = gpxpy.parse(gpx_file)
+cnxn.pandas_to_postgres(dftm, 'tbltrails')
+cnxn.pandas_to_postgres(dftraj, 'tbltrail_trajectory')
