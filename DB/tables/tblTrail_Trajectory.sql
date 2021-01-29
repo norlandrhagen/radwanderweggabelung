@@ -3,6 +3,7 @@ CREATE TABLE tblTrail_Trajectory (
     trail_ID INT,
     lat float NOT NULL,
     lon float NOT NULL,
+    elev float NOT NULL,
     PRIMARY KEY(trajectory_ID),
     CONSTRAINT fk_Trails
         FOREIGN KEY(trail_ID)
