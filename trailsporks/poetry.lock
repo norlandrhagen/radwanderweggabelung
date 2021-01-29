@@ -1,0 +1,16 @@
+[[package]]
+category = "main"
+description = "GPX file parser and GPS track manipulation library"
+name = "gpxpy"
+optional = false
+python-versions = ">=3.6"
+version = "1.4.2"
+
+[metadata]
+content-hash = "2392759828dce6259e8fac57f219eadca0a59ec762a210fec8260c576ef7e476"
+python-versions = "^3.7"
+
+[metadata.files]
+gpxpy = [
+    {file = "gpxpy-1.4.2.tar.gz", hash = "sha256:0832041899cdfdc5a607291bbef3d73042e16ffcecc3f2cb9631b699db0bb53f"},
+]
