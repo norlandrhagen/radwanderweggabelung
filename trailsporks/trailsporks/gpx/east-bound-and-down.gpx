@@ -1,0 +1,18 @@
+<?xml version="1.0" standalone="yes"?>
+		<gpx version="1.0" creator="GPS App - http:/www.gpsapp.net/"
+		xmlns="http://www.topografix.com/GPX/1/0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+		
+					  <wpt lat="47.47627" lon="-121.91770">
+						<ele>0.0</ele>
+						<name><![CDATA[Start ]]></name>
+						<desc><![CDATA[]]></desc>
+						<sym><![CDATA[]]></sym>
+					  </wpt>
+					
+					  <wpt lat="47.47265" lon="-121.91780">
+						<ele>0.0</ele>
+						<name><![CDATA[End ]]></name>
+						<desc><![CDATA[]]></desc>
+						<sym><![CDATA[]]></sym>
+					  </wpt>
+					<trk><name><![CDATA[East Bound And Down]]></name><trkseg><trkpt lat="47.47627" lon="-121.9177"><ele>599.77</ele></trkpt><trkpt lat="47.47619" lon="-121.91716"><ele>597.98</ele></trkpt><trkpt lat="47.47608" lon="-121.91709"><ele>593.63</ele></trkpt><trkpt lat="47.47595" lon="-121.91725"><ele>588.8</ele></trkpt><trkpt lat="47.47586" lon="-121.91726"><ele>584.65</ele></trkpt><trkpt lat="47.47581" lon="-121.9173"><ele>581.9</ele></trkpt><trkpt lat="47.47578" lon="-121.91713"><ele>578.75</ele></trkpt><trkpt lat="47.47572" lon="-121.91719"><ele>576.18</ele></trkpt><trkpt lat="47.47568" lon="-121.91673"><ele>566.01</ele></trkpt><trkpt lat="47.47561" lon="-121.91641"><ele>561.84</ele></trkpt><trkpt lat="47.47562" lon="-121.91616"><ele>563.91</ele></trkpt><trkpt lat="47.47553" lon="-121.91614"><ele>557.81</ele></trkpt><trkpt lat="47.47546" lon="-121.91628"><ele>552.33</ele></trkpt><trkpt lat="47.47536" lon="-121.91647"><ele>549.36</ele></trkpt><trkpt lat="47.47528" lon="-121.91672"><ele>551.33</ele></trkpt><trkpt lat="47.47511" lon="-121.91689"><ele>544.37</ele></trkpt><trkpt lat="47.47479" lon="-121.91715"><ele>537.85</ele></trkpt><trkpt lat="47.47456" lon="-121.9173"><ele>531.76</ele></trkpt><trkpt lat="47.47439" lon="-121.9175"><ele>527.47</ele></trkpt><trkpt lat="47.47432" lon="-121.91742"><ele>521.91</ele></trkpt><trkpt lat="47.47436" lon="-121.91733"><ele>522.75</ele></trkpt><trkpt lat="47.47441" lon="-121.91717"><ele>520.82</ele></trkpt><trkpt lat="47.47441" lon="-121.91701"><ele>517.7</ele></trkpt><trkpt lat="47.47415" lon="-121.91699"><ele>503.19</ele></trkpt><trkpt lat="47.47389" lon="-121.9172"><ele>495.37</ele></trkpt><trkpt lat="47.47373" lon="-121.91732"><ele>489.91</ele></trkpt><trkpt lat="47.47368" lon="-121.91746"><ele>491.04</ele></trkpt><trkpt lat="47.47373" lon="-121.91771"><ele>497.02</ele></trkpt><trkpt lat="47.47374" lon="-121.91808"><ele>490.55</ele></trkpt><trkpt lat="47.47361" lon="-121.91804"><ele>486.41</ele></trkpt><trkpt lat="47.47353" lon="-121.9179"><ele>484.52</ele></trkpt><trkpt lat="47.4734" lon="-121.91767"><ele>481.48</ele></trkpt><trkpt lat="47.47332" lon="-121.91797"><ele>476.76</ele></trkpt><trkpt lat="47.47326" lon="-121.91827"><ele>470.87</ele></trkpt><trkpt lat="47.47309" lon="-121.9183"><ele>463.97</ele></trkpt><trkpt lat="47.47293" lon="-121.91825"><ele>459.58</ele></trkpt><trkpt lat="47.47285" lon="-121.91836"><ele>454.9</ele></trkpt><trkpt lat="47.47273" lon="-121.9184"><ele>449.22</ele></trkpt><trkpt lat="47.47266" lon="-121.91826"><ele>445.89</ele></trkpt><trkpt lat="47.47266" lon="-121.91817"><ele>445.05</ele></trkpt><trkpt lat="47.47265" lon="-121.9178"><ele>437.55</ele></trkpt></trkseg></trk></gpx>
