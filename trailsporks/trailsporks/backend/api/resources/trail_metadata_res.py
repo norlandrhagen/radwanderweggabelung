@@ -27,7 +27,7 @@ class TrailMetadata(Resource):
     def get(self,id):
         metadata = TrailMetadataModel.find_by_id(id)
         if metadata:
-            return metadata.json(), 200
+            return [md.json() for md in metadata] , 200
         return {'message': 'Trail metadata not found'}, 404
     
     def post(self, id):
