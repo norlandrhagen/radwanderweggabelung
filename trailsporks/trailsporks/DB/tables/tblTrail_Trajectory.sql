@@ -3,11 +3,6 @@ CREATE TABLE tblTrail_Trajectory (
     lat float NOT NULL,
     lon float NOT NULL,
     elev float NOT NULL,
-    PRIMARY KEY(trail_ID));
-
-
-ALTER TABLE tblTrail_Trajectory   ADD CONSTRAINT FK_tblTrail_Trajectory_tblTrails FOREIGN KEY(trail_ID)
-REFERENCES tblTrails (trail_ID);
-
-
-
+    PRIMARY KEY(trail_ID),
+	FOREIGN KEY (trail_ID) REFERENCES tblTrails(trail_ID)
+);
