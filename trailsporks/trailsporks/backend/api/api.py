@@ -8,6 +8,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 api = Api(app)
 
 api.add_resource(Trail, '/trail/<string:name>')
+api.add_resource(TrailMetadata, '/trailmetadata/<string:name>')
 
 if __name__ == '__main__':
     db.init_app(app)

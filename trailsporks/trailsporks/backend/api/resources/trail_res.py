@@ -28,11 +28,21 @@ class Trail(Resource):
             return {'message': 'An error occurred uploading the trail.'}, 500
 
         return trail.json(), 201 
+    
+    def put(self, name):
+        if TrailModel.get_by_name(name):
+            data = Trail.parser.parse_args()
+            trail = TrailModel(data)
+            try:
+                trail.upsert()
+            except:
+                return {'message': 'An error occurred updating the trail.'}, 500
+        return {'message': 'A trail with the provided Id does not exist.'}
 
     def delete(self, name):
         trail = TrailModel.get_by_name(name)
         if trail:
             trail.delete()
-        return {'message': 'Trail deleted.'} 
-
+            return {'message': 'Trail deleted.'}
+        return {'message': 'A trail with the provided name does not exist.'}, 404 
     
