@@ -7,11 +7,10 @@ class TrailModel(db.Model):
     name = db.Column(db.String(100))
 
     def __init__(self, id, name):
-        self.id = id
         self.name = name
 
     def json(self):
-        return {'id': self.id, 'name': self.name}
+        return {'name': self.name}
 
     @classmethod
     def get_by_name(cls, name):
