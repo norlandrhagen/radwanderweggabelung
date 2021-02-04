@@ -3,7 +3,8 @@ from db import db
 
 class TrailMetadataModel(db.Model):
     __tablename__ = "trailmetadata"  # Table names need to be shored up.
-    trail_id = db.Column(db.Integer, db.ForeignKey('trails.id'))
+    pkey = db.Column(db.Integer, primary_key=True)
+    trail_id = db.Column(db.Integer)
     lat = db.Column(db.Float)
     lon = db.Column(db.Float)
     elev = db.Column(db.Float)
