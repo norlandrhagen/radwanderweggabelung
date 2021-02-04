@@ -10,10 +10,10 @@ class TrailMetadataModel(db.Model):
     elev = db.Column(db.Float)
 
     def __init__(self, trail_id, lat, lon, elev):
-        trail_id = trail_id
-        lat = lat
-        lon = lon
-        elev = elev
+        self.trail_id = trail_id
+        self.lat = lat
+        self.lon = lon
+        self.elev = elev
     
     def json(self):
         return {'id': self.trail_id, 'lat': self.lat, 'lon': self.lon, 'elev': self.elev}
