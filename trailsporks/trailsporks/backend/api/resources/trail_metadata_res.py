@@ -27,7 +27,7 @@ class TrailMetadata(Resource):
     
     def post(self, id):
         if TrailMetadataModel.find_by_id(id):
-            return {'message': 'A trail with this Id already exists.'}
+            return {'message': 'A trail with this Id already exists.'}, 400
         
         data = TrailMetadata.parser.parse_args()
         trail_metadata = TrailMetadataModel(id, **data)
