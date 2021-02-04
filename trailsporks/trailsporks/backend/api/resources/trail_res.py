@@ -11,7 +11,7 @@ class Trail(Resource):
         
     def post(self, name):
         if TrailModel.get_by_name(name):
-            return {'message':'A trail with this name already exists.'}
+            return {'message':'A trail with this name already exists.'}, 400
         
         trail = TrailModel(name)
 
