@@ -3,11 +3,6 @@ from models.trail_metadata import TrailMetadataModel
 
 class TrailMetadata(Resource):
     parser = reqparse.RequestParser()
-    parser.add_argument('id',
-        type=int,
-        required=True,
-        help='The trail id (required)'
-    )
     parser.add_argument('lat',
         type=float,
         required=True,
@@ -35,7 +30,7 @@ class TrailMetadata(Resource):
             return {'message': 'A trail with this Id already exists.'}
         
         data = TrailMetadata.parser.parse_args()
-        trail_metadata = TrailMetadataModel(data)
+        trail_metadata = TrailMetadataModel(id, **data)
 
         try:
             trail_metadata.upsert()
@@ -47,7 +42,7 @@ class TrailMetadata(Resource):
     def put(self,id):
         if TrailMetadataModel.find_by_id(id):
             data = TrailMetadata.parser.parse_args()
-            trail_metadata = TrailMetadataModel(data)
+            trail_metadata = TrailMetadataModel(id, **data)
             try:
                 trail_metadata.upsert()
             except:
