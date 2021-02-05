@@ -14,7 +14,6 @@ class Trail(Resource):
             return {"message": "A trail with this name already exists."}, 400
 
         trail = TrailModel(name)
-
         try:
             trail.upsert()
         except:

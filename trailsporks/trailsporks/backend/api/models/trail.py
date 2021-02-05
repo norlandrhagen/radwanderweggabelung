@@ -5,7 +5,9 @@ from db import db
 class TrailModel(db.Model):
     __tablename__ = "tblTrails"
     id = db.Column(db.Integer, primary_key=True)
+    rating_id = db.Column(db.Integer, db.ForeignKey("tblTrail_Rating.rating_id"))
     name = db.Column(db.String(100))
+    rating = db.relationship("TrailRatingModel", backref="TrailRatingModel", lazy=True)
 
     def __init__(self, name):
         self.name = name

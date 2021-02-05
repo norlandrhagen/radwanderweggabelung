@@ -4,12 +4,10 @@ from db import db
 
 class TrailRatingModel(db.Model):
     __tablename__ = "tblTrail_Rating"
-    pkey = db.Column(db.Integer, primary_key=True)
-    rating_id = db.Column(db.Integer)
+    rating_id = db.Column(db.Integer, primary_key=True)
     rating = db.Column(db.String(20), nullable=False)
 
-    def __init__(self, pkey, rating_id, rating):
-        self.pkey = pkey
+    def __init__(self, rating_id, rating):
         self.rating_id = rating_id
         self.rating = rating
 
