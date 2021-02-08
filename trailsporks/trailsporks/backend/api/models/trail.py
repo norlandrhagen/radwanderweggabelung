@@ -4,16 +4,22 @@ from db import db
 
 class TrailModel(db.Model):
     __tablename__ = "tblTrails"
-    id = db.Column(db.Integer, primary_key=True)
-    rating_id = db.Column(db.Integer, db.ForeignKey("tblTrail_Rating.rating_id"))
+    trail_id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(100))
-    rating = db.relationship("TrailRatingModel", backref="TrailRatingModel", lazy=True)
+    difficulty = db.Column(db.String(30))
+    description = db.Column(db.String(500))
 
-    def __init__(self, name):
+    trajectory = db.relationship('TrailTrajectoryModel')
+
+    def __init__(self, name, difficulty="Do you know the rating of this trail?",
+        description="Enter a description for this trail!"):
         self.name = name
+        self.difficulty = difficulty
+        self.description = description
 
     def json(self):
-        return {"name": self.name}
+        return {"name": self.name, "difficulty": self.difficulty,
+        "description": self.description, "trajectory": [t.json() for t in self.trajectory]}
 
     @classmethod
     def get_by_name(cls, name):

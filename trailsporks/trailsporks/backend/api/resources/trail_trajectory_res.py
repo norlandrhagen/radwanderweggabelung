@@ -43,6 +43,7 @@ class TrailTrajectory(Resource):
 
         return trail_trajectory.json(), 201
 
+    # Need to correct put logic once we refine approach to pass arrays.
     def put(self, id):
         if TrailTrajectoryModel.find_by_id(id):
             data = TrailTrajectory.parser.parse_args()

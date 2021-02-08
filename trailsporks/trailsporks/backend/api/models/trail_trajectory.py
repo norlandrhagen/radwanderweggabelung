@@ -5,10 +5,12 @@ from db import db
 class TrailTrajectoryModel(db.Model):
     __tablename__ = "tblTrail_Trajectory"
     pkey = db.Column(db.Integer, primary_key=True)
-    trail_id = db.Column(db.Integer)
     lat = db.Column(db.Float)
     lon = db.Column(db.Float)
     elev = db.Column(db.Float)
+
+    trail_id = db.Column(db.Integer, db.ForeignKey('tblTrails.trail_id'))
+    trail = db.relationship('TrailModel')
 
     def __init__(self, trail_id, lat, lon, elev):
         self.trail_id = trail_id
@@ -19,6 +21,7 @@ class TrailTrajectoryModel(db.Model):
     def json(self):
         return {
             "id": self.trail_id,
+            "name": self.trail.name,
             "lat": self.lat,
             "lon": self.lon,
             "elev": self.elev,
