@@ -19,7 +19,7 @@ class TrailModel(db.Model):
 
     def json(self):
         return {"name": self.name, "difficulty": self.difficulty,
-        "description": self.description, "trajectory": [t.json() for t in self.trajectory]}
+        "description": self.description}
 
     @classmethod
     def get_by_name(cls, name):
