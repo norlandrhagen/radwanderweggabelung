@@ -28,7 +28,7 @@ class TrailTrajectory(Resource):
 
     def post(self, id):
         if TrailTrajectoryModel.find_by_id(id):
-            return {"message": "A trail with this Id already exists."}, 400
+            return {"message": f"A trail with this Id already exists."}, 400
 
         data = TrailTrajectory.parser.parse_args()
         trail_trajectory = TrailTrajectoryModel(id, **data)
@@ -36,10 +36,7 @@ class TrailTrajectory(Resource):
         try:
             trail_trajectory.upsert()
         except:
-            return (
-                {"message": "An error occurred while uploading trail trajectory."},
-                500,
-            )
+            return {"message": "An error occurred while uploading trail trajectory."}, 500
 
         return trail_trajectory.json(), 201
 
@@ -60,3 +57,7 @@ class TrailTrajectory(Resource):
             trail_trajectory.delete()
             return {"message": "Trail trajectory deleted."}
         return {"message": "Trail with the associated id does not exist."}, 404
+
+class TrajectoryList(Resource):
+    def get(self):
+        return {'Trajectories': [trail.json() for trail in TrailTrajectoryModel.query.all()]}

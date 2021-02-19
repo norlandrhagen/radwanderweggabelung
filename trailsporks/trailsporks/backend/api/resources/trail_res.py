@@ -29,7 +29,8 @@ class Trail(Resource):
         if TrailModel.get_by_name(name):
             return {"message": "A trail with this name already exists."}, 400
 
-        trail = TrailModel(name)
+        data = Trail.parser.parse_args()
+        trail = TrailModel(name, **data)
         try:
             trail.upsert()
         except:

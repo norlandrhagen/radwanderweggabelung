@@ -9,8 +9,6 @@ class TrailModel(db.Model):
     difficulty = db.Column(db.String(30))
     description = db.Column(db.String(500))
 
-    trajectory = db.relationship('TrailTrajectoryModel')
-
     def __init__(self, name, difficulty="Do you know the rating of this trail?",
         description="Enter a description for this trail!"):
         self.name = name
