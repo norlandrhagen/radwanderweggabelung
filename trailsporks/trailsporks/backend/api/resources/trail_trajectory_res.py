@@ -9,22 +9,19 @@ class TrailTrajectory(Resource):
     parser = reqparse.RequestParser()
     parser.add_argument(
         "lat",
-        nargs='+'
-        type=float,
+        type=str,
         required=True,
         help="Latitude value in decimal degrees (required)",
     )
     parser.add_argument(
         "lon",
-        nargs='+',
-        type=float,
+        type=str,
         required=True,
         help="Longitude value in decimal degrees (required)",
     )
     parser.add_argument(
         "elev", 
-        nargs='+',
-        type=float,
+        type=str,
         required=True, 
         help="Elevation in feet (required)"
     )
