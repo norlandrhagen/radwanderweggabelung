@@ -2,8 +2,6 @@ from flask_restful import Resource, reqparse
 from models.trail_trajectory import TrailTrajectoryModel
 from sqlalchemy.exc import SQLAlchemyError
 
-# Should we use the nargs or the delimited string approach to pass data?
-# It feels like strings might be the way to go?
 
 class TrailTrajectory(Resource):
     parser = reqparse.RequestParser()
@@ -37,6 +35,23 @@ class TrailTrajectory(Resource):
             return {"message": "A trail with this Id already exists."}, 400
 
         data = TrailTrajectory.parser.parse_args()
+        """
+        data.lat = [float(num) for num in data.lat.split(',')]
+        data.lon = [float(num) for num in data.lon.split(',')]
+        data.elev = [float(num) for num in data.elev.split(',')]
+        
+        for i in len(data.lat):
+            data = (id,data.lat[i],data.lon[i],data.elev[i])
+            trail_trajectory = TrailTrajectoryModel(**data)
+
+            try:
+                trail_trajectory.upsert()
+            except SQLAlchemyError as e:
+                return {"message": f"An error occurred while uploading trail trajectory.{e}"}, 500
+
+
+        """
+
         trail_trajectory = TrailTrajectoryModel(id, **data)
 
         try:
