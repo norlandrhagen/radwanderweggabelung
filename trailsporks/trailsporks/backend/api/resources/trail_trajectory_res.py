@@ -2,23 +2,31 @@ from flask_restful import Resource, reqparse
 from models.trail_trajectory import TrailTrajectoryModel
 from sqlalchemy.exc import SQLAlchemyError
 
+# Should we use the nargs or the delimited string approach to pass data?
+# It feels like strings might be the way to go?
 
 class TrailTrajectory(Resource):
     parser = reqparse.RequestParser()
     parser.add_argument(
         "lat",
+        nargs='+'
         type=float,
         required=True,
         help="Latitude value in decimal degrees (required)",
     )
     parser.add_argument(
         "lon",
+        nargs='+',
         type=float,
         required=True,
         help="Longitude value in decimal degrees (required)",
     )
     parser.add_argument(
-        "elev", type=float, required=True, help="Elevation in feet (required)"
+        "elev", 
+        nargs='+',
+        type=float,
+        required=True, 
+        help="Elevation in feet (required)"
     )
 
     def get(self, id):
