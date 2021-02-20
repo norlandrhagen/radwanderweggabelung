@@ -16,7 +16,7 @@ class TrailModel(db.Model):
         self.description = description
 
     def json(self):
-        return {"name": self.name, "difficulty": self.difficulty,
+        return {"trail_id":self.trail_id,"name": self.name, "difficulty": self.difficulty,
         "description": self.description}
 
     @classmethod
