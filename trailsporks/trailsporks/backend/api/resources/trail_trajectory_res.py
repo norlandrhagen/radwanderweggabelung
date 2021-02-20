@@ -1,5 +1,6 @@
 from flask_restful import Resource, reqparse
 from models.trail_trajectory import TrailTrajectoryModel
+from sqlalchemy.exc import SQLAlchemyError
 
 
 class TrailTrajectory(Resource):
@@ -28,15 +29,15 @@ class TrailTrajectory(Resource):
 
     def post(self, id):
         if TrailTrajectoryModel.find_by_id(id):
-            return {"message": f"A trail with this Id already exists."}, 400
+            return {"message": "A trail with this Id already exists."}, 400
 
         data = TrailTrajectory.parser.parse_args()
         trail_trajectory = TrailTrajectoryModel(id, **data)
 
         try:
             trail_trajectory.upsert()
-        except:
-            return {"message": "An error occurred while uploading trail trajectory."}, 500
+        except SQLAlchemyError as e:
+            return {"message": f"An error occurred while uploading trail trajectory.{e}"}, 500
 
         return trail_trajectory.json(), 201
 

@@ -26,10 +26,10 @@ class TrailTrajectoryModel(db.Model):
 
     @classmethod
     def find_by_id(cls, id):
-        return cls.query.filter_by(trail_id=id).all()
+        return cls.query.filter_by(trail_id=id).first()
 
     def upsert(self):
-        db.session_add(self)
+        db.session.add(self)
         db.session.commit()
 
     def delete(self):
